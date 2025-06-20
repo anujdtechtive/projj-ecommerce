@@ -6,6 +6,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const data = await prismadb.cart.create({
       data: body,
+      
     });
     return NextResponse.json({ id: data.id });
   } catch (error) {
